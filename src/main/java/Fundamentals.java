@@ -85,6 +85,69 @@ public class Fundamentals {
         // Exercise 5 – Palindrome Checker
 
 
+        String word =  IO.readln("Enter a word:");
+
+        String reversed = new StringBuilder(word).reverse().toString();
+
+        if (word.equalsIgnoreCase(reversed)) {
+            IO.println(word + " is a palindrome.");
+        } else {
+            IO.println(word + " is NOT a palindrome.");
+        }
+        IO.println("-----------------------------------------");
+
+
+        // Exercise 6 – Word Counter
+
+
+        String sentence2 = IO.readln("Enter a sentence:");
+        String find = IO.readln("Enter word to find: ");
+
+        String[] finds = sentence2.trim().split("\\s+");
+        int totalWords = sentence2.trim().isEmpty() ? 0 : finds.length;
+        int count = 0;
+
+        for (String w : words) {
+            if (w.equalsIgnoreCase(find)) {
+                count++;
+            }
+        }
+
+        IO.println("Total words : " + totalWords);
+        IO.println("\"" + find + "\" appears: " + count + " times");
+        IO.println("-----------------------------------------");
+
+
+
+        // Exercise 7 – Circle Calculator
+
+        String Radius = IO.readln("Enter radius: ");
+
+        double radius = Double.parseDouble(Radius.trim());
+        double area = Math.PI * radius * radius;
+        double circumference = 2.0 * Math.PI * radius;
+
+        IO.println("Area         : " + area);
+        IO.println("Circumference: " + circumference);
+        IO.println("-----------------------------------------");
+
+
+        // Exercise 8 – Power Table
+
+        IO.print("Enter a base number: ");
+
+        int base = Integer.parseInt(IO.readln());
+
+        for (int i = 1; i <= 10; i++) {
+            IO.println(base + " ^ " + i + " = " + Math.pow(base, i));
+        }
+        IO.println("-----------------------------------------");
+
+
+        // Exercise 9 – Right Triangle Checker
+
+
+
 
 
     }
