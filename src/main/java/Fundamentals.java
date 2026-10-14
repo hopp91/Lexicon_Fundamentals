@@ -85,7 +85,7 @@ public class Fundamentals {
         // Exercise 5 – Palindrome Checker
 
 
-        String word =  IO.readln("Enter a word:");
+        String word = IO.readln("Enter a word:");
 
         String reversed = new StringBuilder(word).reverse().toString();
 
@@ -118,7 +118,6 @@ public class Fundamentals {
         IO.println("-----------------------------------------");
 
 
-
         // Exercise 7 – Circle Calculator
 
         String Radius = IO.readln("Enter radius: ");
@@ -146,12 +145,70 @@ public class Fundamentals {
 
         // Exercise 9 – Right Triangle Checker
 
+        double a = Double.parseDouble(IO.readln("Enter side a: "));
+        double b = Double.parseDouble(IO.readln("Enter side b: "));
+        double c = Double.parseDouble(IO.readln("Enter side c: "));
+
+        double longest = Math.max(a, Math.max(b, c));
+        IO.println("Longest side: " + longest);
+
+        double x, y;
+
+        if (longest == a) {
+            x = b;
+            y = c;
+        } else if (longest == b) {
+            x = a;
+            y = c;
+        } else {
+            x = a;
+            y = b;
+        }
+
+        if (x * x + y * y == longest * longest) {
+            IO.println("This IS a right triangle.");
+        } else {
+            IO.println("This is NOT a right triangle.");
+        }
+        IO.println("-----------------------------------------");
+
+
+        // Exercise 10 – Number Cruncher
+
+
+        int d = Integer.parseInt(IO.readln("Enter first number: "));
+        int e = Integer.parseInt(IO.readln("Enter second number: "));
+        int f = Integer.parseInt(IO.readln("Enter third number: "));
+
+        IO.println("Maximum:  " + findMax(d, e, f));
+        IO.println("Minimum : " + findMin(d, e, f));
+        IO.println("Average : %.2f".formatted(average(d, e, f)));
+        IO.println("-----------------------------------------");
+    }
+
+    static int findMax(int x, int y, int z) {
+        return Math.max(x, Math.max(y, z));
+    }
+
+    static int findMin(int x, int y, int z) {
+        return Math.min(x, Math.min(y, z));
+    }
+
+    static double average(int x, int y, int z) {
+        return (x + (double) y + z) / 3;
+    }
+
+
+        // Exercise 11 – Dice Statistics
+
+
+
+
 
 
 
 
     }
-}
 
 
 
