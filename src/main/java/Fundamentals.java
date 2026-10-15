@@ -236,16 +236,50 @@ public class Fundamentals {
             }
 
             IO.println("Generated password: " + password1);
+            IO.println("-----------------------------------------");
 
 
 
             // Exercise 13 – Receipt Builder
 
+            StringBuilder receipt = new StringBuilder();
+            double grandTotal = 0.0;
+
+            while (true) {
+                IO.println("Enter item name (or 'done'): ");
+                String itemName = IO.readln();
+
+                if (itemName.equalsIgnoreCase("done")) {
+                    break;
+                }
+
+                IO.println("Enter price: ");
+                double price = Double.parseDouble(IO.readln());
+
+                receipt.append(String.format("%-20s %8.2f%n",
+                        itemName, price));
+
+                grandTotal += price;
+            }
+
+            StringBuilder finalReceipt = new StringBuilder();
+
+            finalReceipt.append("==============================\n");
+            finalReceipt.append("           Receipt\n");
+            finalReceipt.append("==============================\n");
+            finalReceipt.append(receipt);
+            finalReceipt.append("------------------------------\n");
+            finalReceipt.append(String.format("%-20s %8.2f%n",
+                    "Grand Total:", grandTotal));
+            finalReceipt.append("==============================\n");
+
+            IO.println("");
+            IO.println(finalReceipt.toString());
+        }
 
 
 
-
-    } // END the main methods
+     // END the main methods
 
     static int findMax(int x, int y, int z) {
         return Math.max(x, Math.max(y, z));
